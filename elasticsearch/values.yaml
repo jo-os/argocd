@@ -75,27 +75,13 @@ hostAliases: []
 #  - "foo.local"
 #  - "bar.local"
 
-# image: "docker.io/elasticsearch/elasticsearch"
-# imageTag: "8.15.1"
+# image: "docker.elastic.co/elasticsearch/elasticsearch"
+# imageTag: "8.5.1"
 # imagePullPolicy: "IfNotPresent"
 
-image:
-  # -- The Docker registry
-  registry: docker.io
-  # -- Docker image repository
-  repository: elasticsearch
-  # Overrides the Grafana image tag whose default is the chart appVersion
-  tag: "8.16.2"
-  sha: ""
-  pullPolicy: IfNotPresent
-
-  ## Optionally specify an array of imagePullSecrets.
-  ## Secrets must be manually created in the namespace.
-  ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-  ## Can be templated.
-  ##
-  pullSecrets: []
-  #   - myRegistrKeySecretName
+image: "docker.io/elasticsearch"
+imageTag: "8.16.2"
+imagePullPolicy: "IfNotPresent"
 
 podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster

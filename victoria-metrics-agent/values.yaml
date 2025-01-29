@@ -95,8 +95,7 @@ podDisruptionBudget:
 
 # -- Generates `remoteWrite.*` flags and config maps with value content for values, that are of type list of map.
 # Each item should contain `url` param to pass validation.
-remoteWrite: #[]
-  - url: http://vm-cluster-victoria-metrics-cluster-vminsert:8480/insert/0/prometheus/
+remoteWrite: []
 # - url: http://vm-insert:8480/insert/0/prometheus
 #   urlRelabelConfig:
 #     - action: keep
@@ -361,7 +360,7 @@ horizontalPodAutoscaling:
 # -- VMAgent scrape configuration
 config:
   global:
-    scrape_interval: 60s
+    scrape_interval: 10s
 
   scrape_configs:
     - job_name: vmagent

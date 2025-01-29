@@ -1,4 +1,11 @@
 server:
+  datasource:
+    url: "http://vm-cluster-victoria-metrics-cluster-vmselect:8481/select/0/prometheus/"
+
+  notifier:
+    alertmanager:
+      url: "alertmanager:9093"
+
   config:
     alerts:
       groups:

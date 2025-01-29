@@ -1,0 +1,14 @@
+server:
+  config:
+    alerts:
+      groups:
+        - name: common
+          rules:
+            - alert: instanceIsDown
+              for: 1m
+              expr: up == 0
+              labels:
+                severity: critical
+              annotations:
+                summary: "{{ $labels.job }} instance: {{$labels.instance }} is not up"
+                description: "Job {{ $labels.job }}  instance: {{$labels.instance }} is not up for the last 1 minute"

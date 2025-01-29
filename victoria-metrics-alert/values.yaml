@@ -148,7 +148,7 @@ server:
   # Multiple notifiers can be enabled by using `notifiers` section
   notifier:
     alertmanager:
-      url: ""
+      url: "alertmanager:9093"
       # -- Basic auth for alertmanager
       basicAuth:
         username: ""

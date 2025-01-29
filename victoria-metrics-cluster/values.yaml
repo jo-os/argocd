@@ -190,9 +190,7 @@ vmselect:
   # -- Pod topologySpreadConstraints
   topologySpreadConstraints: []
   # -- Pod's annotations
-  podAnnotations: #{}
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "8481"
+  podAnnotations: {}
   # -- Count of vmselect pods
   replicaCount: 2
   # -- Container workdir
@@ -463,9 +461,7 @@ vminsert:
   # -- Pod topologySpreadConstraints
   topologySpreadConstraints: []
   # -- Pod's annotations
-  podAnnotations: #{}
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "8480"
+  podAnnotations: {}
   # -- Count of vminsert pods
   replicaCount: 2
   # -- Container workdir
@@ -969,9 +965,7 @@ vmstorage:
     subPath: ""
 
   # -- Pod's annotations
-  podAnnotations: #{}
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "8482"
+  podAnnotations: {}
   # -- StatefulSet/Deployment annotations
   annotations: {}
   # -- StatefulSet/Deployment additional labels

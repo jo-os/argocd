@@ -80,7 +80,7 @@ hostAliases: []
 # imagePullPolicy: "IfNotPresent"
 
 image: "docker.io/elasticsearch"
-imageTag: "8.16.2"
+imageTag: "8.5.1"
 imagePullPolicy: "IfNotPresent"
 
 podAnnotations: {}

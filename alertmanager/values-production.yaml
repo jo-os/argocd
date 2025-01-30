@@ -24,15 +24,25 @@ config:
     # slack_api_url: ''
   templates:
     - '/etc/alertmanager/*.tmpl'
+
   receivers:
+    - name: 'default-receiver'
     - name: 'telegram'
       telegram_configs:
-      - api_url: https://api.telegram.org
+      - api_url: 'https://api.telegram.org'
         bot_token: '7854226917:AAETlZt4pHu-ZE8Aq2uqB98QwUiwpl0ze8k'
-        chat_id: -4513763724
+        chat_id: '-4513763724'
         message: "Alertmanager\n--\n Alertname: {{ .GroupLabels.alertname}}\n Severity: {{ .CommonLabels.severity }}\n {{ range .Alerts }}{{ .Annotations.summary }}\n{{ end }}"
+
   route:
+    group_by: ['critical']
+    receiver: 'default-receiver'
     group_wait: 10s
     group_interval: 5m
-    receiver: telegram
     repeat_interval: 3h
+    routes:
+      - receiver: 'telegram'
+        continue: true
+      # - match:
+      #     - severity: critical
+      #   receiver: 'telegram'

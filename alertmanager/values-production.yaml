@@ -36,3 +36,7 @@ config:
     group_interval: 5m
     receiver: telegram
     repeat_interval: 3h
+    routes:
+      - match:
+          - severity: critical
+        receiver: telegram

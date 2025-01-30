@@ -6,7 +6,7 @@ server:
 
   notifier:
     alertmanager:
-      url: "vm-alertmanager:9093"
+      url: "http://vm-alertmanager:9093"
 
   resources:
     limits:

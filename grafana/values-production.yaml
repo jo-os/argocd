@@ -67,3 +67,7 @@ dashboards:
       gnetId: 14205
       revision: 1
       datasource: victoriametrics
+    node-exporter:
+      gnetId: 1860
+      revision: 37
+      datasource: victoriametrics

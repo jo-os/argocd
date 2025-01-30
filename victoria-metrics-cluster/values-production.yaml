@@ -39,7 +39,7 @@ vmstorage:
     storageClassName: ""
     existingClaim: ""
     mountPath: /storage
-    size: 8Gi
+    size: 5Gi
     subPath: ""
   horizontalPodAutoscaler:
     enabled: false

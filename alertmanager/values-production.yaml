@@ -1,2 +1,19 @@
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9093"
+
 persistence:
-  size: 1Gi
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 500Mi

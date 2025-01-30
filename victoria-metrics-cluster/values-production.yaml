@@ -1,14 +1,56 @@
 vmselect:
+  horizontalPodAutoscaler:
+    enabled: false
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
   podAnnotations:
       prometheus.io/scrape: "true"
       prometheus.io/port: "8481"
 
 vminsert:
+  horizontalPodAutoscaler:
+    enabled: false
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
   podAnnotations:
       prometheus.io/scrape: "true"
       prometheus.io/port: "8480"
 
 vmstorage:
+  persistentVolume:
+    enabled: true
+    name: vmstorage-volume
+    accessModes:
+      - ReadWriteOnce
+    annotations: {}
+    labels: {}
+    storageClassName: ""
+    existingClaim: ""
+    mountPath: /storage
+    size: 8Gi
+    subPath: ""
+  horizontalPodAutoscaler:
+    enabled: false
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1024Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
   podAnnotations:
       prometheus.io/scrape: "true"
       prometheus.io/port: "8482"

@@ -1,5 +1,19 @@
+replicaCount: 1
+
 remoteWrite:
    - url: http://vm-cluster-victoria-metrics-cluster-vminsert:8480/insert/0/prometheus/
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8429"
 
 config:
   global:

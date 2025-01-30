@@ -2,9 +2,23 @@ server:
   datasource:
     url: "http://vm-cluster-victoria-metrics-cluster-vmselect:8481/select/0/prometheus/"
 
+  replicaCount: 1
+
   notifier:
     alertmanager:
       url: "alertmanager:9093"
+
+  resources:
+    limits:
+      cpu: 400m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  podAnnotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "8880"
 
   config:
     alerts:

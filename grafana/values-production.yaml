@@ -1,3 +1,32 @@
+replicas: 1
+
+autoscaling:
+  enabled: false
+
+adminPassword: testfortest!!
+
+resources:
+  limits:
+    cpu: 400m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+persistence:
+  type: pvc
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 1Gi
+  finalizers:
+    - kubernetes.io/pvc-protection
+  extraPvcLabels: {}
+  disableWarning: false
+  inMemory:
+    enabled: false
+  lookupVolumeName: true
+
 datasources:
   datasources.yaml:
     apiVersion: 1

@@ -1,5 +1,5 @@
 image: "docker.io/kibana"
-imageTag: "8.5.1"
+imageTag: "8.16.3"
 imagePullPolicy: "IfNotPresent"
 
 replicas: 1

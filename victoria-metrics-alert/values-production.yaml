@@ -35,9 +35,9 @@ server:
                 description: "Job {{ $labels.job }}  instance: {{$labels.instance }} is not up for the last 1 minute"
             - alert: HostHighCpuLoad
               expr: (sum by (instance) (avg by (mode, instance) (rate(node_cpu_seconds_total{mode!="idle"}[2m]))) > 0.8) * on(instance) group_left (nodename) node_uname_info{nodename=~".+"}
-              for: 10m
+              for: 2m
               labels:
-                severity: warning
+                severity: critical
               annotations:
                 summary: Host high CPU load (instance {{ $labels.instance }})
                 description: "CPU load is > 80%\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -53,7 +53,7 @@ server:
               expr: (avg by (instance) (rate(node_cpu_seconds_total{mode="iowait"}[5m])) * 100 > 10) * on(instance) group_left (nodename) node_uname_info{nodename=~".+"}
               for: 0m
               labels:
-                severity: warning
+                severity: critical
               annotations:
                 summary: Host CPU high iowait (instance {{ $labels.instance }})
                 description: "CPU iowait > 10%. A high iowait means that you are disk or network bound.\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"

@@ -418,6 +418,10 @@ config:
         Name es
         Match kube.*
         Host elasticsearch-master
+        HTTP_User elastic
+        HTTP_Passwd wfDVGvjuEnIK58dH
+        tls On
+        tls.verify Off
         Logstash_Format On
         Retry_Limit False
 
@@ -425,6 +429,10 @@ config:
         Name es
         Match host.*
         Host elasticsearch-master
+        HTTP_User elastic
+        HTTP_Passwd wfDVGvjuEnIK58dH
+        tls On
+        tls.verify Off
         Logstash_Format On
         Logstash_Prefix node
         Retry_Limit False

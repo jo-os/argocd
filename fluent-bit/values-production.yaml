@@ -80,7 +80,7 @@ config:
         Match kube.*
         Host elasticsearch-master
         HTTP_User elastic
-        HTTP_Passwd elastic123test
+        HTTP_Passwd egi9aScYejy6COp4
         tls On
         tls.verify Off
         Logstash_Format On
@@ -92,7 +92,7 @@ config:
         Match host.*
         Host elasticsearch-master
         HTTP_User elastic
-        HTTP_Passwd elastic123test
+        HTTP_Passwd egi9aScYejy6COp4
         tls On
         tls.verify Off
         Logstash_Format On

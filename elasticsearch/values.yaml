@@ -229,7 +229,7 @@ securityContext:
 # How long to wait for elasticsearch to stop gracefully
 terminationGracePeriod: 120
 
-sysctlVmMaxMapCount: 262144
+# sysctlVmMaxMapCount: 262144
 
 readinessProbe:
   failureThreshold: 3

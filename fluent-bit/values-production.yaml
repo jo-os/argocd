@@ -26,7 +26,6 @@ daemonSetVolumes:
 daemonSetVolumeMounts:
   - name: varlog
     mountPath: /var/log
-    readOnly: true
   # - name: varlibdockercontainers
   #   mountPath: /var/lib/docker/containers
   #   readOnly: true
